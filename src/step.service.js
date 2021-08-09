@@ -29,10 +29,11 @@ module.exports = function stepService(store) {
 
     if (!store[username]) {
       store[username] = {};
+      store[username].cumulativeSteps = 0;
     }
     store[username].ts = ts;
     store[username].cumulativeSteps += newSteps;
-    
+
   };
 
   return service;

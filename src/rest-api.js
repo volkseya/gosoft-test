@@ -24,7 +24,7 @@ module.exports = (stepService) => {
   })
 
   close = () => {
-    server.close;
+    server.close();
   }
 
 };

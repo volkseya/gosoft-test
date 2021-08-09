@@ -19,10 +19,13 @@ module.exports = (stepService) => {
           newSteps && typeof newSteps === 'number') 
       {
         stepService.add(username, ts, newSteps);
+        ws.send(200)
+      } else if (typeof newSteps !== 'number') {
+        ws.send(404)
       }
     });
   
-    ws.send('something');
+    ws.send('connected');
   });
 
   return wsServer;
