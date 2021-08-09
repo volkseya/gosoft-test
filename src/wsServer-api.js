@@ -19,9 +19,9 @@ module.exports = (stepService) => {
           newSteps && typeof newSteps === 'number') 
       {
         stepService.add(username, ts, newSteps);
-        ws.send(200)
+        ws.send('success')
       } else if (typeof newSteps !== 'number') {
-        ws.send(404)
+        ws.send('failed')
       }
     });
   

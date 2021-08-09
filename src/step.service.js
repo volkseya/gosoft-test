@@ -24,15 +24,6 @@ module.exports = function stepService(store) {
     //   },
     // }
 
-    // if (store[username]) {
-    //   store[username].ts = ts;
-    //   store[username].cumulativeSteps += newSteps;
-    // } else {
-    //   store[username] = {};
-    //   store[username].ts = ts;
-    //   store[username].cumulativeSteps += newSteps;
-    // }
-
     if (!store[username]) {
       store[username] = {};
       store[username].cumulativeSteps = 0;
