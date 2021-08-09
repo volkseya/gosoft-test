@@ -1,9 +1,15 @@
 // * TODO: Implement function for updating user's step data in store
 // * TODO: Function for getting user's step data may need some adjustments
 module.exports = function stepService(store) {
+  const builtinProps = Object.getOwnPropertyNames(Object.prototype).sort();
   const service = {};
 
-  service.get = (username) => store[username];
+  service.get = (username) => {
+    if (username in builtinProps) {
+      return undefined;
+    }
+    return store[username];
+  };
 
   service.add = (username, ts, newSteps) => {
     // Assume that `store` is initially an empty object {}. An example `store` is:

@@ -23,7 +23,8 @@ module.exports = (stepService) => {
     console.log('Connected to port ' + REST_PORT)
   })
 
-  close = () => {
+  const close = () => {
+    console.log(server);
     server.close();
   }
 
